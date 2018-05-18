@@ -18,8 +18,10 @@ from django.contrib import admin
 
 from core import views
 
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
+    url(r'^$',TemplateView.as_view(template_name='home.html'),name='home'),
     url(r'^accounts/register/$', views.CustomRegistrationView.as_view()),
     url(r'^accounts/', include('registration.backends.hmac.urls')),
     url(r'^admin/', admin.site.urls),

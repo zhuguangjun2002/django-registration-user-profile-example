@@ -1,0 +1,14 @@
+{% autoescape off %}
+To initiate the activate  process for your {{ user.get_username }} TestSite Account,
+click the link below:
+
+The expiration_days is {{ expiration_days }} days.
+
+http://{{ site }}{% url 'registration_activate' activation_key=activation_key %}
+
+If clicking the link above doesn't work, please copy and paste the URL in a new browser
+window instead.
+
+Sincerely,
+The TestSite Team
+{% endautoescape %}
